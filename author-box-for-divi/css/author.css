@@ -10,6 +10,10 @@ body:not(.et_pb_pagebuilder_layout) .abfd_et_pb_row, .et_pb_pagebuilder_layout .
 	z-index: 1;
 }
 
+.abfd-container-divi .et_pb_column {
+	float: none;
+}
+
 .abfd-container {
 	width: 100%;
 	padding: 20px;

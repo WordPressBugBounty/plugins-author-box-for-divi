@@ -4,8 +4,8 @@ Donate link: http://www.rhyzz.com/donate.html
 Tags: author-box-for-divi, author-box-divi, divi-author-box, divi-author, divi-author-bio
 Requires PHP: 5.2.4
 Requires at least: 3.0
-Stable tag: 2.0.1
-Tested up to: 6.6.2
+Stable tag: 2.0.2
+Tested up to: 6.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -74,6 +74,9 @@ None
 2. Administration Section
 
 == Changelog ==
+
+= 2.0.2 = 
+* Fixed a bug with shortcodes and some Divi layouts
 
 = 2.0.1 = 
 * Fixed a bug with the Divi theme CSS broken layout
