@@ -48,4 +48,5 @@ return array(
 	'wordpress' => array('WordPress', '#21759B', 'brands'),
 	'windows' => array('Windows', '#00BCF2', 'brands'),
 	'rss' => array('RSS', '#FFA500', 'solid'),
+	'theorg' => array('The Org', '#000', 'svg'),
 );

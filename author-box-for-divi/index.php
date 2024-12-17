@@ -3,7 +3,7 @@
 Plugin Name: Author Box WP Lens
 Plugin URI: https://wordpress.org/plugins/author-box-for-divi/
 Description: A plugin which provides an author box for your WordPress blog.
-Version: 2.0.2
+Version: 2.0.3
 Text Domain: author-box-for-divi
 Domain Path: /languages
 Author: Andrej
@@ -64,6 +64,43 @@ class ABFD
 		self::$is_pro = class_exists('ABWLPro') ? ABWLPro::is_pro() : false;
 
 		load_plugin_textdomain('author-box-for-divi', false, dirname(plugin_basename(__FILE__)) . '/languages');
+
+		// migrate old networks
+		$has_migrated = get_option('abfd-option-migrate-old-networks', false);
+		if (!$has_migrated) {
+			self::migrate_old_networks();
+			update_option('abfd-option-migrate-old-networks', true);
+		}
+	}
+
+	static function migrate_old_networks()
+	{
+		global $wpdb;
+		$old_networks = array(
+			'facebook' => 'facebook-f',
+			'twitter' => 'x-twitter',
+			'linkedin' => 'linkedin-in',
+			'pinterest' => 'pinterest-p',
+			'vimeo' => 'vimeo-v'
+		);
+
+		foreach ($old_networks as $old => $new) {
+			// Get all user IDs where the old network key exists and the new network key does not
+			$user_ids = $wpdb->get_col($wpdb->prepare(
+				"SELECT user_id FROM $wpdb->usermeta WHERE meta_key = %s AND meta_value != '' AND user_id NOT IN (
+					SELECT user_id FROM $wpdb->usermeta WHERE meta_key = %s
+				)",
+				'abfd-user-social-networks-' . $old,
+				'abfd-user-social-networks-' . $new
+			));
+
+			// update all keys old to new for all user_ids using a single query
+			$wpdb->query($wpdb->prepare(
+				"UPDATE $wpdb->usermeta SET meta_key = %s WHERE meta_key = %s AND user_id IN (" . implode(',', $user_ids) . ")",
+				'abfd-user-social-networks-' . $new,
+				'abfd-user-social-networks-' . $old
+			));
+		}
 	}
 
 	static function admin_menu()

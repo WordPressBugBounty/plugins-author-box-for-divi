@@ -22,7 +22,13 @@
 			<?php _e('You can use the following shortcode to display the author box in your posts, pages, or custom post types:', 'author-box-for-divi'); ?>
 		</p>
 		<p>
-			<code>[author-box-wp-lens id="user id | username"]</code>
+			<code>[author-box-wp-lens]</code> - <?php _e('Display the author box for the current post author', 'author-box-for-divi'); ?>
+		</p>
+		<p>
+			<code>[author-box-wp-lens id="123"]</code> - <?php _e('Display the author box for the user with id 123', 'author-box-for-divi'); ?>
+		</p>
+		<p>
+			<code>[author-box-wp-lens id="john-doe"]</code> - <?php _e('Display the author box for the user with username "john-doe"', 'author-box-for-divi'); ?>
 		</p>
 	</div>
 

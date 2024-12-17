@@ -2,6 +2,10 @@ body:not(.et_pb_pagebuilder_layout) .abfd_et_pb_row, .et_pb_pagebuilder_layout .
 	width: 100%;
 }
 
+.abfd-preview-area {
+	max-width: 1000px;
+}
+
 #et-boc {
 	z-index: 2;
 }
@@ -15,7 +19,7 @@ body:not(.et_pb_pagebuilder_layout) .abfd_et_pb_row, .et_pb_pagebuilder_layout .
 }
 
 .abfd-container {
-	width: 100%;
+	width: auto;
 	padding: 20px;
 	background-color: #fff;
 	border: 1px solid #e2e2e2;
@@ -141,3 +145,17 @@ body:not(.et_pb_pagebuilder_layout) .abfd_et_pb_row, .et_pb_pagebuilder_layout .
 .wp-admin .abfd-container .abfd-biography p {
 	font-size: 14px;
 }
+
+/* Custom SVG icons */
+.fa-svg {
+	background-color: currentColor;
+	width: 1em;
+	height: 1em;
+}
+
+.fa-theorg {
+	-webkit-mask: url('data:image/svg+xml;utf8,<svg id="Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 604 604"><path class="cls-1" d="M473.24,248.95h-85.62c-23.64,0-42.82-19.2-42.82-42.81v-49.72h-85.62v49.72c0,23.61-19.17,42.81-42.82,42.81h-85.63c-23.64,0-42.81,19.15-42.81,42.81v128.46h85.62v-87.3h85.63v-83.97h85.62v83.97h85.63v87.3h85.63v-128.46c0-23.65-19.18-42.81-42.83-42.81Z"/></svg>') no-repeat center center;
+	mask: url('data:image/svg+xml;utf8,<svg id="Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 604 604"><path class="cls-1" d="M473.24,248.95h-85.62c-23.64,0-42.82-19.2-42.82-42.81v-49.72h-85.62v49.72c0,23.61-19.17,42.81-42.82,42.81h-85.63c-23.64,0-42.81,19.15-42.81,42.81v128.46h85.62v-87.3h85.63v-83.97h85.62v83.97h85.63v87.3h85.63v-128.46c0-23.65-19.18-42.81-42.83-42.81Z"/></svg>') no-repeat center center;
+	background-color: currentColor;
+}
+
