@@ -3,7 +3,7 @@
 Plugin Name: Author Box WP Lens
 Plugin URI: https://wordpress.org/plugins/author-box-for-divi/
 Description: A plugin which provides an author box for your WordPress blog.
-Version: 2.0.3
+Version: 2.0.4
 Text Domain: author-box-for-divi
 Domain Path: /languages
 Author: Andrej
@@ -95,11 +95,13 @@ class ABFD
 			));
 
 			// update all keys old to new for all user_ids using a single query
-			$wpdb->query($wpdb->prepare(
-				"UPDATE $wpdb->usermeta SET meta_key = %s WHERE meta_key = %s AND user_id IN (" . implode(',', $user_ids) . ")",
-				'abfd-user-social-networks-' . $new,
-				'abfd-user-social-networks-' . $old
-			));
+			if (!empty($user_ids)) {
+				$wpdb->query($wpdb->prepare(
+					"UPDATE $wpdb->usermeta SET meta_key = %s WHERE meta_key = %s AND user_id IN (" . implode(',', $user_ids) . ")",
+					'abfd-user-social-networks-' . $new,
+					'abfd-user-social-networks-' . $old
+				));
+			}
 		}
 	}
 
@@ -405,7 +407,7 @@ class ABFD
 
 	static function wp_enqueue_scripts()
 	{
-		wp_enqueue_style('abfd-author', plugins_url(null, __FILE__) . '/css/author.css');
+		wp_enqueue_style('abfd-author', plugin_dir_url( __FILE__ ) . 'css/author.css');
 		// enqueue fontwesome free brands from cdn
 		wp_enqueue_style('abfd-font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
 	}
@@ -418,7 +420,7 @@ class ABFD
 			(isset($_GET['page']) && $_GET['page'] == 'abfd') || 
 			($current_screen && ($current_screen->base === 'post' || $current_screen->base === 'post-new'))
 		) {
-			wp_enqueue_style('abfd-author', plugins_url(null, __FILE__) . '/css/author.css');
+			wp_enqueue_style('abfd-author', plugin_dir_url( __FILE__ ) . 'css/author.css');
 			// Load the color picker
 			wp_enqueue_style('wp-color-picker');
 			wp_enqueue_script('wp-color-picker');

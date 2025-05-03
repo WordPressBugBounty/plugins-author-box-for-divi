@@ -2,10 +2,10 @@
 Contributors: andrej, dbeja
 Donate link: http://www.rhyzz.com/donate.html
 Tags: author-box-for-divi, author-box-divi, divi-author-box, divi-author, divi-author-bio
-Requires PHP: 5.2.4
+Requires PHP: 5.2
 Requires at least: 3.0
-Stable tag: 2.0.3
-Tested up to: 6.7
+Stable tag: 2.0.4
+Tested up to: 6.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,15 +13,15 @@ A plugin which provides an author box for your WordPress blog.
 
 == Description ==
 
-This plugin was originally known as “Author Box for Divi.”
+This plugin was originally known as "Author Box for Divi."
 
 The [Author Box WP Lens](https://wplens.com/) plugin has been developed to work specifically with the Divi theme but has been upgraded to work with any WordPress theme or page builder. It will provide you with nice author boxes for your WordPress blog or website, whichever theme or page builder you use.
 
 Using this plugin, a simple author box that will show the WordPress author bio will be displayed automatically at the bottom of all your blog posts, pages, projects, or media. You can choose in the plugin's settings on which post types you want it to show.
 
-The plugin will show the author’s gravatar icon by default. Or you can use your own image; just enter the URL of your profile image in Users > Your Profile. You can also specify the URLs for your social network profiles (only those that you enter will show in your author box).
+The plugin will show the author's gravatar icon by default. Or you can use your own image; just enter the URL of your profile image in Users > Your Profile. You can also specify the URLs for your social network profiles (only those that you enter will show in your author box).
 
-Other features of this plugin allow you to specify the Name Prefix (you can write, e.g., “Author” or “Written by”), Text Color, Background Color and Border Color.
+Other features of this plugin allow you to specify the Name Prefix (you can write, e.g., "Author" or "Written by"), Text Color, Background Color and Border Color.
 
 = Plugin Features: =
 - Over 45 Social Media Icons
@@ -75,6 +75,10 @@ None
 
 == Changelog ==
 
+= 2.0.4 =
+* Fixed data migration process for existing users
+* Updated CSS loading method for better compatibility
+
 = 2.0.3 = 
 * Fixed a bug when migrating the data from v1* to v2
 * Styling improvements
@@ -113,7 +117,7 @@ Fixed: Author Photograph not showing
 = 1.4.1 =
 * Tested with WP 6.2
 * New feature added: to customize the color of the social media icons
-* New feature added: The possibility to make the author’s name to be a hyperlink to the author page
+* New feature added: The possibility to make the author's name to be a hyperlink to the author page
 * Fixed Photo
 
 = 1.4 =
