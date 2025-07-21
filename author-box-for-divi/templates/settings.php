@@ -243,6 +243,48 @@
 							<a href="https://wplens.com" target="_blank" class="button-primary">
 								<?php _e('Pro', 'author-box-for-divi'); ?>
 							</a>
+						<?php endif; ?>
+						<label for="abfd-option-profile-picture-link">
+							<?php _e('Custom Profile Picture Link', 'author-box-for-divi') ?>:
+						</label>
+					</th>
+					<td>
+						<input type="text" name="abfd-option-profile-picture-link" id="abfd-option-profile-picture-link"
+							value="<?php echo esc_attr(get_option('abfd-option-profile-picture-link', '')); ?>" class="large-text"
+							<?= disabled(1, !ABFD::$is_pro) ?>>
+						<p>
+							<?php _e('Enter a custom URL for the profile picture link. Leave empty to use the default author page link or disable linking.', 'author-box-for-divi'); ?>
+						</p>
+					</td>
+				</tr>
+
+				<tr>
+					<th>
+						<?php if (!ABFD::$is_pro) : ?>
+							<a href="https://wplens.com" target="_blank" class="button-primary">
+								<?php _e('Pro', 'author-box-for-divi'); ?>
+							</a>
+						<?php endif; ?>
+						<label for="abfd-option-author-name-link">
+							<?php _e('Custom Author Name Link', 'author-box-for-divi') ?>:
+						</label>
+					</th>
+					<td>
+						<input type="text" name="abfd-option-author-name-link" id="abfd-option-author-name-link"
+							value="<?php echo esc_attr(get_option('abfd-option-author-name-link', '')); ?>" class="large-text"
+							<?= disabled(1, !ABFD::$is_pro) ?>>
+						<p>
+							<?php _e('Enter a custom URL for the author name link. Leave empty to use the default author page link or disable linking.', 'author-box-for-divi'); ?>
+						</p>
+					</td>
+				</tr>
+
+				<tr>
+					<th>
+						<?php if (!ABFD::$is_pro) : ?>
+							<a href="https://wplens.com" target="_blank" class="button-primary">
+								<?php _e('Pro', 'author-box-for-divi'); ?>
+							</a>
 							<?php endif; ?>
 						<label for="abfd-option-multiple-authors">
 							<?php _e('Enable multiple authors', 'author-box-for-divi') ?>:

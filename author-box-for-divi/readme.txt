@@ -4,7 +4,7 @@ Donate link: http://www.rhyzz.com/donate.html
 Tags: author-box-for-divi, author-box-divi, divi-author-box, divi-author, divi-author-bio
 Requires PHP: 5.2
 Requires at least: 3.0
-Stable tag: 2.0.4
+Stable tag: 2.1
 Tested up to: 6.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -74,6 +74,11 @@ None
 2. Administration Section
 
 == Changelog ==
+
+= 2.1 =
+* New Feature: Added custom URL for the profile picture
+* New Feature: Added custom URL for the author name
+* Added Substack social network icon
 
 = 2.0.4 =
 * Fixed data migration process for existing users

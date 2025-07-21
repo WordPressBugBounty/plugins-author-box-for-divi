@@ -3,11 +3,11 @@
 Plugin Name: Author Box WP Lens
 Plugin URI: https://wordpress.org/plugins/author-box-for-divi/
 Description: A plugin which provides an author box for your WordPress blog.
-Version: 2.0.4
+Version: 2.1
 Text Domain: author-box-for-divi
 Domain Path: /languages
 Author: Andrej
-Author URI: https://divitheme.net
+Author URI: https://wplens.com
 */
 
 class ABFD
@@ -252,6 +252,12 @@ class ABFD
 			if (!isset($_POST['abfd-option-author-posts-page-link'])) {
 				update_option('abfd-option-author-posts-page-link', false);
 			}
+			if (!isset($_POST['abfd-option-profile-picture-link'])) {
+				update_option('abfd-option-profile-picture-link', '');
+			}
+			if (!isset($_POST['abfd-option-author-name-link'])) {
+				update_option('abfd-option-author-name-link', '');
+			}
 		}
 	}
 
@@ -431,6 +437,7 @@ class ABFD
 		// Enqueue select2 for Profile and Edit User pages
 		if ($hook == 'profile.php' || $hook == 'user-edit.php' || $hook == 'post-new.php' || $hook == 'post.php') {
 			wp_enqueue_media();
+			wp_enqueue_style('abfd-author', plugin_dir_url( __FILE__ ) . 'css/author.css');
 			wp_enqueue_style('select2', 'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css');
 			wp_enqueue_script('select2', 'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js', array('jquery'));
 			// enqueue fontwesome free brands from cdn
@@ -576,6 +583,14 @@ class ABFD
 		if(!$hyperlink_author_page) {
 			$author_link = "#";
 		}
+
+		// Get custom link options (Pro features)
+		$profile_picture_link = $settings['abfd-option-profile-picture-link'] ?? get_option('abfd-option-profile-picture-link', '');
+		$author_name_link = $settings['abfd-option-author-name-link'] ?? get_option('abfd-option-author-name-link', '');
+
+		// Determine final links based on priority
+		$final_profile_link = !empty($profile_picture_link) ? $profile_picture_link : ($hyperlink_author_page ? $author_link : '#');
+		$final_name_link = !empty($author_name_link) ? $author_name_link : ($hyperlink_author_page ? $author_link : '#');
 
 		ob_start();
 		include plugin_dir_path( __FILE__ ) . 'templates/author-box.php';

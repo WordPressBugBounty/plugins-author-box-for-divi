@@ -1,14 +1,14 @@
 <div class="et_pb_row abfd_et_pb_row abfd-container-divi">
 	<div class="et_pb_column">
 		<div class="abfd-container">
-			<a href="<?= $author_link ?>" <?= $link_attrs ?> class="abfd-photograph-link">
+			<a href="<?= $final_profile_link ?>" <?= $link_attrs ?> class="abfd-photograph-link">
 				<div class="abfd-photograph" style="background-image: url('<?php echo $fields['photograph']; ?>');"></div>
 		</a>
 
 		<div class="abfd-details">
 			<div class="abfd-name">
-				<?php if ($hyperlink_author_page) { ?>
-					<a href="<?= $author_link ?>" <?= $link_attrs ?>>
+				<?php if ($final_name_link !== '#') { ?>
+					<a href="<?= $final_name_link ?>" <?= $link_attrs ?>>
 						<?php echo $name_prefix . ' ' . $user->display_name; ?>
 					</a>
 				<?php } else { ?>

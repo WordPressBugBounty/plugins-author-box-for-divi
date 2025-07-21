@@ -78,9 +78,7 @@ jQuery(document).ready(function($) {
 				// get fa data attr
 				var fa = $(state.element).data('fa');
 				var baseClass = 'fa-' + fa + ' fa-' + state.id;
-				var $state = $(
-						'<span><i class="' + baseClass + '"></i> ' + state.text + '</span>'
-				);
+				var $state = $('<span><i class="' + baseClass + '"></i> ' + state.text + '</span>');
 				return $state;
 		}
 
@@ -113,11 +111,14 @@ jQuery(document).ready(function($) {
 				var networkText = e.params.data.text;
 				var selectedElement = e.params.data.element;
 				var fa = $(selectedElement).data('fa');
+				
 				if ($('#social-networks-container').find('[data-network="' + network + '"]').length === 0) {
+						var iconHtml = '<i class="fa-' + fa + ' fa-' + network + '"></i>';
+						
 						var inputHtml = '<table class="form-table social-network-row" data-network="' + network + '">' +
 								'<tr>' +
 										'<th>' +
-												'<label for="abfd-user-social-networks-' + network + '"><i class="fa-' + fa + ' fa-' + network + '"></i> ' + networkText + ':</label>' +
+												'<label for="abfd-user-social-networks-' + network + '">' + iconHtml + ' ' + networkText + ':</label>' +
 										'</th>' +
 										'<td>' +
 												'<input type="text" name="abfd-user-social-networks-' + network + '" class="regular-text" />' +

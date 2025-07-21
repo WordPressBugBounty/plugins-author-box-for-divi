@@ -49,4 +49,5 @@ return array(
 	'windows' => array('Windows', '#00BCF2', 'brands'),
 	'rss' => array('RSS', '#FFA500', 'solid'),
 	'theorg' => array('The Org', '#000', 'svg'),
+	'substack' => array('Substack', '#FF6719', 'svg'),
 );
