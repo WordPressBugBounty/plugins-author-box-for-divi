@@ -43,6 +43,8 @@ Other features of this plugin allow you to specify the Name Prefix (you can writ
 - Multiple Authors [PRO](https://wplens.com/)
 - Link Attributes [PRO](https://wplens.com/)
 - Customizable Options [PRO](https://wplens.com/)
+- Custom URL for the profile picture [PRO](https://wplens.com/)
+- Custom URL for the author name [PRO](https://wplens.com/)
 - Font Control [PRO](https://wplens.com/)
 - Placement Options [PRO](https://wplens.com/)
 - Gutenberg Block [PRO](https://wplens.com/)
