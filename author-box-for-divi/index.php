@@ -3,11 +3,11 @@
 Plugin Name: Author Box WP Lens
 Plugin URI: https://wordpress.org/plugins/author-box-for-divi/
 Description: A plugin which provides an author box for your WordPress blog.
-Version: 2.1
+Version: 2.1.4
 Text Domain: author-box-for-divi
 Domain Path: /languages
-Author: Andrej
-Author URI: https://wplens.com
+Author: Netrr
+Author URI: https://netrr.com
 */
 
 class ABFD
@@ -672,4 +672,4 @@ class ABFD
 }
 
 ABFD::load();
-?>
+

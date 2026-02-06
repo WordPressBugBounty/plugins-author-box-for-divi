@@ -4,6 +4,7 @@
 			alt="<?php echo esc_attr('Author Box for Divi'); ?>" style="vertical-align: middle; width: 300px; height: auto;">
 	</h2>
 
+	<!-- Preview Area -->
 	<div class="abfd-preview-area">
 		<?php
 		// get author box html
@@ -12,6 +13,7 @@
 		?>
 	</div>
 
+	<!-- Shortcode Info -->
 	<div class="abfd-shortcode-info">
 		<?php if (!ABFD::$is_pro) : ?>
 			<a href="https://wplens.com" target="_blank" class="button-primary abfd-pro">

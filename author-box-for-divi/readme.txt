@@ -1,15 +1,15 @@
 === Author Box WP Lens ===
-Contributors: andrej, dbeja
-Donate link: http://www.rhyzz.com/donate.html
-Tags: author-box-for-divi, author-box-divi, divi-author-box, divi-author, divi-author-bio
+Contributors: netrr, andrejdivi, andrej, dbeja
+Donate link: https://www.paypal.com/paypalme/dbkode
+Tags: author box, author bio, author, bio, author social icons
 Requires PHP: 5.2
 Requires at least: 3.0
-Stable tag: 2.1
-Tested up to: 6.8
+Stable tag: 2.1.4
+Tested up to: 6.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A plugin which provides an author box for your WordPress blog.
+A plugin which provides an author box for your WordPress blog. Originally known as "Author Box for Divi."
 
 == Description ==
 
@@ -76,6 +76,18 @@ None
 2. Administration Section
 
 == Changelog ==
+
+= 2.1.4 =
+Tested with WP 6.9
+
+= 2.1.3 =
+* Fixed small issue introduced in 2.1.1
+
+= 2.1.2 =
+* Updated plugin tags and description
+
+= 2.1.1 =
+* Updated plugin author information to reflect a change of WordPress.org account
 
 = 2.1 =
 * New Feature: Added custom URL for the profile picture
@@ -174,4 +186,9 @@ Fixed: Author Photograph not showing
 * Small bug fix
 
 = 1.0 =
+
 * Initial release
+
+
+
+
